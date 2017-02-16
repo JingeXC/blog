@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 无限轮播图Demo | ThinkLife</title>
+  <title>gulp | ThinkLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Think with your life!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ThinkLife">
-<meta property="og:url" content="http://yoursite.com/tags/无限轮播图Demo/index.html">
+  <meta name="description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/gulp/index.html">
 <meta property="og:site_name" content="ThinkLife">
-<meta property="og:description" content="Think with your life!">
+<meta property="og:description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta property="og:image" content="http://ojioqa2pk.bkt.clouddn.com/l.png">
+<meta property="og:updated_time" content="2017-02-16T15:42:21.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ThinkLife">
-<meta name="twitter:description" content="Think with your life!">
+<meta name="twitter:title" content="gulp">
+<meta name="twitter:description" content="1 写在前面的废话开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。
+2 用gulp启动一个服务器容器以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在">
+<meta name="twitter:image" content="http://ojioqa2pk.bkt.clouddn.com/l.png">
   
     <link rel="alternative" href="/atom.xml" title="ThinkLife" type="application/atom+xml">
   
@@ -152,60 +158,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gulp" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/26/carouselFigure/" class="archive-article-date">
-  	<time datetime="2016-12-26T13:34:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/26/carouselFigure/">CarouselFigure</a>
+    <h1 class="article-title" itemprop="name">
+      gulp
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/16/gulp/" class="archive-article-date">
+  	<time datetime="2017-02-16T14:42:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-写在前面的废话"><a href="#1-写在前面的废话" class="headerlink" title="1 写在前面的废话"></a>1 写在前面的废话</h2><p>开始接触到前端自动化，感觉这个东西好省力，好神奇，只要在命令行里敲入代码就能省去以前手动引入包，打包等等工作。所以花了很多精力去学习它。学习么，总要有点收获和总结么，这里就描述一个常用的gulp任务。</p>
+<h2 id="2-用gulp启动一个服务器容器"><a href="#2-用gulp启动一个服务器容器" class="headerlink" title="2 用gulp启动一个服务器容器"></a>2 用gulp启动一个服务器容器</h2><p>以前编写网页，总是需要安装各种容器像TOMCAT，XAMPP，但是这些容器是为服务器定制的，对于前端开发来讲有点太占资源了，还会有缓存等等问题。好在nodejs的兴起，gulp.grunt等这类工具可以替代以前的臃肿的容器。</p>
+<p>在文件目录下使用npm生成package.json,并且安装本地版本的gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm init</div><div class="line">npm install gulp --save-dev</div></pre></td></tr></table></figure></p>
+<p>安装需要的gulp工具<br>这边需要的是gulp-connect<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp-connect --save-dev</div></pre></td></tr></table></figure></p>
+<p>新建一个gulpfile.js文件<br>引入gulp和gulp-connect模块,新建一个task，配置服务器基本信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&quot;gulp&quot;);</div><div class="line">var connect = require(&quot;gulp-connect&quot;);</div><div class="line">//server</div><div class="line">gulp.task(&apos;server&apos;,function()&#123;</div><div class="line">	connect.server(&#123;</div><div class="line">		root:&apos;./&apos;,</div><div class="line">		livereload:true,</div><div class="line">		port:8320</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>然后就可以在命令行下输入”gulp server”来启动服务<br><img src="http://ojioqa2pk.bkt.clouddn.com/l.png" alt="something wrong"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">无限轮播图Demo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端自动化</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/16/gulp/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/01/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -228,9 +328,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
