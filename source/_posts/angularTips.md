@@ -20,7 +20,7 @@ tags: angular1
 result/country////////
 ```
 
-后来请教大神，才得知上面这种方式是参数逼传，还有一种是参数可以选传
+后来请教大神，才得知上面这种方式是参数必传，还有一种是参数可以选传
 ```javascript
 .state('tab.refresh',{
     url:'/refresh/:country?/:city?/:region?/:pricerange?/:room?/:forsale?/:type?/:indoor?/:outdoor?',
