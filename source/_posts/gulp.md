@@ -161,7 +161,7 @@ gulp.task('watch',function(){
 ```
 这样就可以啦，但是还有不完美的地方。。。。
 
--1 写在后面的东东
+-0 写在后面的东东
 ----
 本页用到的模块如下：
 	1 gulp-connect 服务器模块
@@ -186,3 +186,91 @@ gulp.task('rename',function(){
 	.pipe(gulp.dest('./OUT'));
 })
 ```
+
+
+
+写在后面的后面
+----
+既然gulp是一个自动化工具，那么项目完成后肯定有打包这一步骤，所有我又对这个gulp任务进行了修改
+
+-1 新建文件压缩task，包括js，css，html和image
+----
+```javascript```
+//压缩js文件
+gulp.task('minifyjs',function(){
+	gulp.src('./app/js/*js')
+	.pipe(uglify())
+	.pipe(rename({suffix:'.min'}))
+	.pipe(gulp.dest('dist/js'));
+});
+//压缩图片
+gulp.task('imgmin',function(){
+	gulp.src('./app/images/*')
+	.pipe(imagemin())
+	.pipe(gulp.dest('dist/images'));
+})
+//压缩Css
+gulp.task('cssmin',function(){
+	gulp.src('./app/css/*.css')
+	.pipe(cssmin())
+	.pipe(rename({suffix:'.min'}))
+	.pipe(gulp.dest('dist/css'));
+})
+//压缩html,修改html引入文件名
+gulp.task('htmlmin',function(){
+	gulp.src('./app/*.html')
+	.pipe(processhtml())
+	.pipe(htmlmin({collapseWhitespace:true}))
+	.pipe(gulp.dest('dist'));
+})
+gulp.task('build',['minifyjs','imgmin','cssmin','htmlmin']);
+```
+首先新建各种文件的压缩task，但这里有几个问题，压缩处理后的文件名需要与源文件有所区别，因而还要经过一道步骤，重命名文件。重命名文件后，又带来一个问题，在html种引入的文件与现实的文件不同，所以要修改html文件。修改如下
+```html```
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>DEMO</title>
+	<!-- build:css css/style.min.css-->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- /build-->
+</head>
+<body>
+	<h1>HELLO GULP</h1>
+	<h2>something</h2>
+	<h3>Test new file position</h3>
+	<hr>
+	<!--build:js js/main.min.js-->
+	<script src="js/main.js"></script>
+	<!--/build-->
+</body>
+</html>
+```
+-2 引入文件优化
+----
+在引入文件优化前代码是这样的
+```javascript```
+var gulp = require("gulp");
+var rename = require("gulp-rename");
+var less = require("gulp-less");
+var sass = require("gulp-sass");
+var styl = require("gulp-stylus");
+var connect = require("gulp-connect");
+var livereload = require('gulp-livereload');
+
+var uglify = require('gulp-uglify-cli');//压缩js
+var imgmin = require('gulp-imagemin');//压缩图片
+var cssmin = require('gulp-cssmin');//压缩css
+var htmlmin = require('gulp-htmlmin');//压缩html
+var processhtml = require('gulp-processhtml');//修改html中引入的文件名
+
+```
+身为能省则省能懒则懒的好男儿，当然不能允许这种情况出现。又找了个模块gulp-load-plugins,现在的代码是这样的
+```javascript```
+var gulp = require("gulp");
+var $ = require('gulp-load-plugins')();
+```
+当然相应的方法调用时，也要进行修改。gulp-load-plugins模块是讲每个模块都加载到$上，使用的时候就以$.foo的方式调用。
+
+[git地址](https://github.com/JingeXC/gulp-learning)
